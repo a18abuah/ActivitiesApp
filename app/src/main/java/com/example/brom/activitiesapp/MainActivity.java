@@ -1,7 +1,17 @@
 package com.example.brom.activitiesapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private String[] mountainNames = {"Matterhorn","Mont Blanc","Denali"};
@@ -13,6 +23,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        List<String> listData = new ArrayList<String>(Arrays.asList(mountainNames));
+
+        ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), R.layout.list_item_textview,
+                R.id.my_item_textview, listData);
+
+
+        ListView myListView= (ListView) findViewById(R.id.my_listview);
+
+        myListView.setAdapter(adapter);
+
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener()  {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText( getApplicationContext(), " height: " + mountainHeights[position]+ " location: " + mountainLocations[position], Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getApplicationContext(),  MountainDetailsActivity.class);
+                startActivity(intent);
+
+
+            }
+
+
+        });
+
 
         // 1. Create a ListView as in previous assignment
         // 2. Create a new activity named "MountainDetailsActivity
