@@ -14,11 +14,14 @@ public class MountainDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mountaindetails);
         TextView incomingData = (TextView) findViewById(R.id.textFromMain);
+        TextView  data = (TextView) findViewById(R.id.textFromMain2);
         Log.d(TAG, "onCreate: Started");
 
         Intent incomingIntent =getIntent();
         String incomingName =incomingIntent.getStringExtra("berg");
+        String  datastring =incomingIntent.getStringExtra("location");
         Log.d(TAG, "oncreate: Found incoming name: " +incomingName);
         incomingData.setText(incomingName);
+        data.setText(datastring);
     }
 }

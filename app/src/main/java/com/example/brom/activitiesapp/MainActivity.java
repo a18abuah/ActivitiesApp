@@ -16,6 +16,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private String[] mountainNames = {"Matterhorn","Mont Blanc","Denali"};
+    private String [] rubriker = {"Mountain information"};
     private String[] mountainLocations = {"Alps","Alps","Alaska"};
     private int[] mountainHeights ={4478,4808,6190};
 
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(),  MountainDetailsActivity.class);
                 intent.putExtra("berg", mountainNames [position] + "\nlocation" + mountainLocations [position] + "\nhighest" + mountainHeights [position]   );
+                intent.putExtra("location", rubriker [position]);
                 startActivity(intent);
 
 

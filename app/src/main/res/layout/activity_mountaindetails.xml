@@ -24,6 +24,7 @@
 
       <TextView
           android:id="@+id/textFromMain"
+
           android:layout_width="291dp"
           android:layout_height="102dp"
           android:layout_marginStart="8dp"
@@ -35,6 +36,7 @@
 
       <TextView
           android:id="@+id/textFromMain2"
+          android:textSize="25dp"
           android:layout_width="285dp"
           android:layout_height="102dp"
           android:layout_marginStart="8dp"
