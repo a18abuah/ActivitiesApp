@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(),  MountainDetailsActivity.class);
                 intent.putExtra("berg", mountainNames [position] + "\nlocation" + mountainLocations [position] + "\nhighest" + mountainHeights [position]   );
-                intent.putExtra("location", rubriker [position]);
+
                 startActivity(intent);
 
 
